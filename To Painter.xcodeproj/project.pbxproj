@@ -10,6 +10,7 @@
 		B61313E81BD7E7FE00A6D6B1 /* AddCustomerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61313E71BD7E7FE00A6D6B1 /* AddCustomerController.swift */; };
 		B627F4C91BDA6BA400DD26CE /* CustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B627F4C81BDA6BA400DD26CE /* CustomerCell.swift */; };
 		B63A3B9D1BD36DDE00E07225 /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A3B9C1BD36DDE00E07225 /* ResetPasswordController.swift */; };
+		B689C51D1BE20DCF0089DE0A /* QuotationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689C51C1BE20DCF0089DE0A /* QuotationsModel.swift */; };
 		B6C7B2E71BDF5672005C5381 /* CustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6C7B2E61BDF5672005C5381 /* CustomerCell.xib */; };
 		B6D580541BD0E15600CD61BA /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D580531BD0E15600CD61BA /* RegisterController.swift */; };
 		B6DB804E1BD54393001A6A4D /* CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DB804D1BD54393001A6A4D /* CloudSync.swift */; };
@@ -68,6 +69,7 @@
 		B61313E71BD7E7FE00A6D6B1 /* AddCustomerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCustomerController.swift; sourceTree = "<group>"; };
 		B627F4C81BDA6BA400DD26CE /* CustomerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerCell.swift; sourceTree = "<group>"; };
 		B63A3B9C1BD36DDE00E07225 /* ResetPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
+		B689C51C1BE20DCF0089DE0A /* QuotationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotationsModel.swift; sourceTree = "<group>"; };
 		B6C7B2E61BDF5672005C5381 /* CustomerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerCell.xib; sourceTree = "<group>"; };
 		B6D580531BD0E15600CD61BA /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		B6DB804D1BD54393001A6A4D /* CloudSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudSync.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				B6FD37EC1BD5360100F308D7 /* CustomersModel.swift */,
+				B689C51C1BE20DCF0089DE0A /* QuotationsModel.swift */,
 			);
 			name = "DB Manager";
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				B6DB80581BD543C8001A6A4D /* Pin.swift in Sources */,
 				B6F005411BCF73A600D3EA46 /* AppDelegate.swift in Sources */,
 				B6DB804E1BD54393001A6A4D /* CloudSync.swift in Sources */,
+				B689C51D1BE20DCF0089DE0A /* QuotationsModel.swift in Sources */,
 				B6DB80551BD543C8001A6A4D /* Functions.swift in Sources */,
 				B6F0058C1BCF753700D3EA46 /* SidePanelSystem.swift in Sources */,
 				B6F005911BCF769400D3EA46 /* SideTableController.swift in Sources */,
