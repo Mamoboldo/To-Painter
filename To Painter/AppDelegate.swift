@@ -7,15 +7,30 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
-
+    
+    func customizeAppearance() {
+        let tintColor = UIColor(red: 9/255.0, green: 169/255.0, blue: 235/255.0, alpha: 1.0)
+        UITabBar.appearance().tintColor = tintColor
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+       customizeAppearance()
+        
+        // Avvio il collegamento a Parse
+        Parse.enableLocalDatastore()
+        
+        // Mi collego a Parse
+        Parse.setApplicationId("Oqx4kFD6y8Uech66gJNkDYDYViE5HaT7hUNZchiv",
+            clientKey: "AxngT2a2JZ8avNKbN90j2FIMP30g4jbk70q9l8cp")
+        
+        PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
+        
         return true
     }
 
@@ -40,7 +55,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

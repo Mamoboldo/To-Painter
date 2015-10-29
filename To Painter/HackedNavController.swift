@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HackedNavController.swift
 //  To Painter
 //
 //  Created by Marco Boldetti on 15/10/15.
@@ -8,18 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HackedNavController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
-
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return topViewController!.preferredStatusBarStyle()
+    }
 }
-
