@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Customer_256_W.png",
+      "filename" : "Customer.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Customer_512_W.png",
+      "filename" : "Customer@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Customer_768_W.png",
+      "filename" : "Customer@3x.png",
       "scale" : "3x"
     }
   ],
