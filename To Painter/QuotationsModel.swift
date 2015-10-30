@@ -16,4 +16,6 @@ class QuotationsModel: NSObject {
     var date            : NSDate! // Data del preventivo
     
     var quotationTitle  : String! // Descrizione del preventivo
+    
+    var quotationObject : PFObject!
 }

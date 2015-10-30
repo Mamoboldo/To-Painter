@@ -13,7 +13,7 @@ protocol AddCustomerDelegate{
     func customerAdded()
 }
 
-class AddCustomerController: UITableViewController {
+class AddCustomerController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var cancelButtonItem: UIBarButtonItem!
     @IBOutlet weak var doneButtonItem: UIBarButtonItem!
@@ -71,11 +71,80 @@ class AddCustomerController: UITableViewController {
                 hidePhotoCell()
             }
         }
+        
+        // UITextFieldDelegate Methods
+        nameField.delegate = self
+        surNameField.delegate = self
+        addressField.delegate = self
+        phoneField.delegate = self
+        emailField.delegate = self
+        webSiteField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - UITextField Delegate Methods
+    // questo metodo viene invocato quando viene premuto Invio sulla tastiera
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        if (textField == nameField) {
+            surNameField.becomeFirstResponder()
+        } else if (textField == surNameField) {
+            addressField.becomeFirstResponder()
+        } else if (textField == addressField) {
+            phoneField.becomeFirstResponder()
+            addAccessoryView(true, field: phoneField)
+        } else if (textField == phoneField) {
+            emailField.becomeFirstResponder()
+        } else if (textField == emailField) {
+            webSiteField.becomeFirstResponder()
+        } else if (textField == webSiteField) {
+            webSiteField.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
+    // Questo scatta quando l'utente inizia la modifica
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if (textField == phoneField) {
+            addAccessoryView(true, field: phoneField)
+        }
+    }
+    
+    // MARK: - Metodi
+    
+    // questo metodo serve per mettere un UIToolBar con dentro un pulsante come "cappello" della tastiera
+    // notare come il metodo ha 2 variabili che gli possiamo passare:
+    // metti serve per dirgli se vogliamo mettere il cappello oppure no
+    // field serve per dirgli a quale textField mettere il cappello sulla tastiera
+    func addAccessoryView(metti : Bool, field : UITextField) {
+        
+        // controlliamo il Bool
+        if metti {
+            // se è true costruiamo la toolbar + il button + il flex (come in PizzaList) e lo mettiamo nell'accessoryView del TextField
+            let keyboardToolbar = UIToolbar(frame: CGRectMake(0, 0, self.view.bounds.size.width, 44))
+            let flex = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+            let save = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Done, target: self, action: "goToFowardField:")
+            keyboardToolbar.setItems([flex, save], animated: false)
+            field.inputAccessoryView = keyboardToolbar
+        } else {
+            // se è false eliminiamo l'accessoryView (quindi togliamo la toolbar dalla tastiera)
+            field.inputAccessoryView = nil
+        }
+    }
+    
+    func goToBackField(textFielf: UITextField) {
+        print("Go Back")
+        
+    }
+    
+    func goToFowardField(textField: UITextField) {
+        emailField.becomeFirstResponder()
+        
     }
     
     // MARK: - Actions
