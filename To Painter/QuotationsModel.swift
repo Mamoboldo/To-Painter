@@ -12,7 +12,7 @@ import Parse
 class QuotationsModel: NSObject {
     
     var paintersName    : String! // Nome Imbianchino
-    var customerName    : String! // Nome Cliente
+    var customerName    : CustomersModel! // Nome Cliente
     var date            : NSDate! // Data del preventivo
     
     var quotationTitle  : String! // Descrizione del preventivo

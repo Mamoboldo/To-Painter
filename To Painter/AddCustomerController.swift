@@ -53,6 +53,11 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate {
             let surName = customerToEdit["surName"] as! String
             self.title = "\(name) \(surName)"
             doneButtonItem.title = "Edit"
+            lock()
+            
+            if doneButtonItem.title == "Edit" {
+                doneButtonItem.action = "unlockAll:"
+            }
             
             
             // Riempio le textField con i dati presi da parse
@@ -90,28 +95,44 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate {
     // questo metodo viene invocato quando viene premuto Invio sulla tastiera
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        if (textField == nameField) {
+        // Faccio lo swtch tra i tag della texfield per dare il focus alla successiva
+        switch textField.tag {
+        case 101:
             surNameField.becomeFirstResponder()
-        } else if (textField == surNameField) {
+        case 102:
             addressField.becomeFirstResponder()
-        } else if (textField == addressField) {
+        case 103:
             phoneField.becomeFirstResponder()
-            addAccessoryView(true, field: phoneField)
-        } else if (textField == phoneField) {
+        case 104:
             emailField.becomeFirstResponder()
-        } else if (textField == emailField) {
+            case 105:
             webSiteField.becomeFirstResponder()
-        } else if (textField == webSiteField) {
-            webSiteField.resignFirstResponder()
+        default:
+            print("Ciao")
         }
-        
         return true
     }
     
-    // Questo scatta quando l'utente inizia la modifica
+    // Questo scatta quando l'utente inizia la modifica e 
+    // faccio apparire una toolbar agganciata alla tastiera
     func textFieldDidBeginEditing(textField: UITextField) {
+        if (textField == nameField) {
+            addAccessoryView(true, field: nameField)
+        }
+        if (textField == surNameField) {
+            addAccessoryView(true, field: surNameField)
+        }
+        if (textField == addressField) {
+            addAccessoryView(true, field: addressField)
+        }
         if (textField == phoneField) {
             addAccessoryView(true, field: phoneField)
+        }
+        if (textField == emailField) {
+            addAccessoryView(true, field: emailField)
+        }
+        if (textField == webSiteField) {
+            addAccessoryView(true, field: webSiteField)
         }
     }
     
@@ -122,14 +143,14 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate {
     // metti serve per dirgli se vogliamo mettere il cappello oppure no
     // field serve per dirgli a quale textField mettere il cappello sulla tastiera
     func addAccessoryView(metti : Bool, field : UITextField) {
-        
         // controlliamo il Bool
         if metti {
             // se è true costruiamo la toolbar + il button + il flex (come in PizzaList) e lo mettiamo nell'accessoryView del TextField
             let keyboardToolbar = UIToolbar(frame: CGRectMake(0, 0, self.view.bounds.size.width, 44))
             let flex = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
-            let save = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Done, target: self, action: "goToFowardField:")
-            keyboardToolbar.setItems([flex, save], animated: false)
+            let next = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Done, target: self, action: "goToFowardField:")
+            let previous = UIBarButtonItem(title: "Previous", style: UIBarButtonItemStyle.Done, target: self, action: "goToBackField:")
+            keyboardToolbar.setItems([flex, previous, next], animated: false)
             field.inputAccessoryView = keyboardToolbar
         } else {
             // se è false eliminiamo l'accessoryView (quindi togliamo la toolbar dalla tastiera)
@@ -137,14 +158,52 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    func goToBackField(textFielf: UITextField) {
-        print("Go Back")
-        
+    func goToBackField(textField: UITextField) {
+        if webSiteField.isFirstResponder() {
+            emailField.becomeFirstResponder()
+        } else if emailField.isFirstResponder() {
+            phoneField.becomeFirstResponder()
+        } else if phoneField.isFirstResponder() {
+            addressField.becomeFirstResponder()
+        } else if addressField.isFirstResponder() {
+            surNameField.becomeFirstResponder()
+        } else if surNameField.isFirstResponder() {
+            nameField.becomeFirstResponder()
+        }
     }
     
     func goToFowardField(textField: UITextField) {
-        emailField.becomeFirstResponder()
+        if nameField.isFirstResponder() {
+            surNameField.becomeFirstResponder()
+        } else if surNameField.isFirstResponder() {
+            addressField.becomeFirstResponder()
+        } else if addressField.isFirstResponder() {
+            phoneField.becomeFirstResponder()
+        } else if phoneField.isFirstResponder() {
+            emailField.becomeFirstResponder()
+        } else if emailField.isFirstResponder() {
+            webSiteField.becomeFirstResponder()
+        }
+    }
+    
+    func lock() {
+        let indexPath = tableView.indexPathForSelectedRow
+        addressField.enabled = false
+        if indexPath?.section == 0 && indexPath?.row == 5 {
+            // let cell = tableView.cellForRowAtIndexPath(indexPath!)
+            performSegueWithIdentifier("showMap", sender: self)
+        }
+    }
+    
+    func unlockAll(sender: AnyObject) {
+        let indexPath = tableView.indexPathForSelectedRow
+        addressField.enabled = true
         
+        doneButtonItem.title = "Done"
+        doneButtonItem.action = "donePressed:"
+        if indexPath?.section == 0 && indexPath?.row == 5 {
+            // let cell = tableView.cellForRowAtIndexPath(indexPath!)
+        }
     }
     
     // MARK: - Actions
@@ -225,13 +284,13 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showMap" {
+            let mapController = segue.destinationViewController as! MapController
+            // Passo l'indirizzo alla stringa
+            mapController.address = addressField.text
+            MapManager.sharedInstance.customerName = self.title // Passo il nome del cliente alla stringa che verrà visualizzata nel pop up
+        }
     }
-    */
 }

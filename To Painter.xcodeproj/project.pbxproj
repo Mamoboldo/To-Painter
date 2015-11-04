@@ -10,8 +10,10 @@
 		B61313E81BD7E7FE00A6D6B1 /* AddCustomerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61313E71BD7E7FE00A6D6B1 /* AddCustomerController.swift */; };
 		B627F4C91BDA6BA400DD26CE /* CustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B627F4C81BDA6BA400DD26CE /* CustomerCell.swift */; };
 		B63A3B9D1BD36DDE00E07225 /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A3B9C1BD36DDE00E07225 /* ResetPasswordController.swift */; };
+		B67710231BE7B7BB00FD4CA4 /* AddQuotationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67710221BE7B7BB00FD4CA4 /* AddQuotationController.swift */; };
+		B67710251BE7C22700FD4CA4 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67710241BE7C22700FD4CA4 /* MapManager.swift */; };
+		B67710271BE7C27300FD4CA4 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67710261BE7C27300FD4CA4 /* MapController.swift */; };
 		B689C51D1BE20DCF0089DE0A /* QuotationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689C51C1BE20DCF0089DE0A /* QuotationsModel.swift */; };
-		B6C7B2E71BDF5672005C5381 /* CustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6C7B2E61BDF5672005C5381 /* CustomerCell.xib */; };
 		B6D580541BD0E15600CD61BA /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D580531BD0E15600CD61BA /* RegisterController.swift */; };
 		B6DB804E1BD54393001A6A4D /* CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DB804D1BD54393001A6A4D /* CloudSync.swift */; };
 		B6DB80501BD543A7001A6A4D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DB804F1BD543A7001A6A4D /* Reachability.swift */; };
@@ -43,7 +45,6 @@
 		B6F0058C1BCF753700D3EA46 /* SidePanelSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0058A1BCF753700D3EA46 /* SidePanelSystem.swift */; };
 		B6F005911BCF769400D3EA46 /* SideTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F005901BCF769400D3EA46 /* SideTableController.swift */; };
 		B6F005931BCF7E1300D3EA46 /* CustomersTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F005921BCF7E1300D3EA46 /* CustomersTableController.swift */; };
-		B6F005951BCF7EA500D3EA46 /* HackedNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F005941BCF7EA500D3EA46 /* HackedNavController.swift */; };
 		B6F1445B1BD191E4003B0B43 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1445A1BD191E4003B0B43 /* SCLAlertView.swift */; };
 		B6FD37ED1BD5360100F308D7 /* CustomersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD37EC1BD5360100F308D7 /* CustomersModel.swift */; };
 /* End PBXBuildFile section */
@@ -69,8 +70,10 @@
 		B61313E71BD7E7FE00A6D6B1 /* AddCustomerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCustomerController.swift; sourceTree = "<group>"; };
 		B627F4C81BDA6BA400DD26CE /* CustomerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerCell.swift; sourceTree = "<group>"; };
 		B63A3B9C1BD36DDE00E07225 /* ResetPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
+		B67710221BE7B7BB00FD4CA4 /* AddQuotationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQuotationController.swift; sourceTree = "<group>"; };
+		B67710241BE7C22700FD4CA4 /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
+		B67710261BE7C27300FD4CA4 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		B689C51C1BE20DCF0089DE0A /* QuotationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotationsModel.swift; sourceTree = "<group>"; };
-		B6C7B2E61BDF5672005C5381 /* CustomerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerCell.xib; sourceTree = "<group>"; };
 		B6D580531BD0E15600CD61BA /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		B6DB804D1BD54393001A6A4D /* CloudSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudSync.swift; sourceTree = "<group>"; };
 		B6DB804F1BD543A7001A6A4D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -108,7 +111,6 @@
 		B6F0058A1BCF753700D3EA46 /* SidePanelSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelSystem.swift; sourceTree = "<group>"; };
 		B6F005901BCF769400D3EA46 /* SideTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideTableController.swift; sourceTree = "<group>"; };
 		B6F005921BCF7E1300D3EA46 /* CustomersTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomersTableController.swift; sourceTree = "<group>"; };
-		B6F005941BCF7EA500D3EA46 /* HackedNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackedNavController.swift; sourceTree = "<group>"; };
 		B6F1445A1BD191E4003B0B43 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		B6FD37EC1BD5360100F308D7 /* CustomersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomersModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B6DC0BAB1BDA8E6300F2C3C1 /* QuotationsViewController.swift */,
+				B67710221BE7B7BB00FD4CA4 /* AddQuotationController.swift */,
 			);
 			name = Quotations;
 			sourceTree = "<group>";
@@ -204,7 +207,6 @@
 			children = (
 				B6F005401BCF73A600D3EA46 /* AppDelegate.swift */,
 				B6F005441BCF73A600D3EA46 /* Main.storyboard */,
-				B6F005941BCF7EA500D3EA46 /* HackedNavController.swift */,
 				B6E73A991BD0C889000EC7FE /* Login/Register */,
 				B6F005961BCF7FB600D3EA46 /* Customer */,
 				B6DC0BAD1BDA8E6E00F2C3C1 /* Quotations */,
@@ -272,7 +274,7 @@
 				B6F005921BCF7E1300D3EA46 /* CustomersTableController.swift */,
 				B61313E71BD7E7FE00A6D6B1 /* AddCustomerController.swift */,
 				B627F4C81BDA6BA400DD26CE /* CustomerCell.swift */,
-				B6C7B2E61BDF5672005C5381 /* CustomerCell.xib */,
+				B67710261BE7C27300FD4CA4 /* MapController.swift */,
 			);
 			name = Customer;
 			sourceTree = "<group>";
@@ -280,6 +282,7 @@
 		B6F1445C1BD191E9003B0B43 /* Librerie */ = {
 			isa = PBXGroup;
 			children = (
+				B67710241BE7C22700FD4CA4 /* MapManager.swift */,
 				B6CCAE0A1BD922DD00764B56 /* cloudServices */,
 				B6DB80511BD543C8001A6A4D /* Functions.swift */,
 				B6DB80521BD543C8001A6A4D /* HudView.swift */,
@@ -407,7 +410,6 @@
 				B6F0054B1BCF73A600D3EA46 /* LaunchScreen.storyboard in Resources */,
 				B6F005481BCF73A600D3EA46 /* Assets.xcassets in Resources */,
 				B6F005461BCF73A600D3EA46 /* Main.storyboard in Resources */,
-				B6C7B2E71BDF5672005C5381 /* CustomerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,15 +438,17 @@
 				B6DB80581BD543C8001A6A4D /* Pin.swift in Sources */,
 				B6F005411BCF73A600D3EA46 /* AppDelegate.swift in Sources */,
 				B6DB804E1BD54393001A6A4D /* CloudSync.swift in Sources */,
+				B67710251BE7C22700FD4CA4 /* MapManager.swift in Sources */,
 				B689C51D1BE20DCF0089DE0A /* QuotationsModel.swift in Sources */,
 				B6DB80551BD543C8001A6A4D /* Functions.swift in Sources */,
 				B6F0058C1BCF753700D3EA46 /* SidePanelSystem.swift in Sources */,
 				B6F005911BCF769400D3EA46 /* SideTableController.swift in Sources */,
 				B6F1445B1BD191E4003B0B43 /* SCLAlertView.swift in Sources */,
 				B6E73A981BD0C884000EC7FE /* LoginController.swift in Sources */,
-				B6F005951BCF7EA500D3EA46 /* HackedNavController.swift in Sources */,
 				B6FD37ED1BD5360100F308D7 /* CustomersModel.swift in Sources */,
 				B61313E81BD7E7FE00A6D6B1 /* AddCustomerController.swift in Sources */,
+				B67710231BE7B7BB00FD4CA4 /* AddQuotationController.swift in Sources */,
+				B67710271BE7C27300FD4CA4 /* MapController.swift in Sources */,
 				B6DC0BAC1BDA8E6300F2C3C1 /* QuotationsViewController.swift in Sources */,
 				B6F0058B1BCF753700D3EA46 /* SideBaseController.swift in Sources */,
 				B627F4C91BDA6BA400DD26CE /* CustomerCell.swift in Sources */,

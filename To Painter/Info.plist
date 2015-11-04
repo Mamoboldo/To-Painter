@@ -47,5 +47,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Autorizza l&apos;App a tracciare la tua posizione per trovare un indirizzo</string>
 </dict>
 </plist>
