@@ -13,6 +13,11 @@ import AddressBookUI
 class MapController: UIViewController, MKMapViewDelegate, MapManagerDelegate {
     @IBOutlet var customerAddressMap : MKMapView!
     
+    // Font per la actionsheet
+    let fontReg = UIFont(name: "AvenirNext-Regular", size: 14)
+    let fontMed = UIFont(name: "AvenirNext-Medium", size: 15)
+    let fontBold = UIFont(name: "AvenirNext-Bold", size: 15)
+    
     var address : String! // Indirizzo che verrà passato dalla textField
 
     override func viewDidLoad() {
@@ -54,6 +59,8 @@ class MapController: UIViewController, MKMapViewDelegate, MapManagerDelegate {
     }
     
     func incomingPin(pin: Pin) {
+        customerAddressMap.setRegion(MKCoordinateRegionMake(pin.coordinate, MKCoordinateSpanMake(0.005, 0.005)), animated: true)
+        
         customerAddressMap.addAnnotation(pin)
     }
     
@@ -85,7 +92,7 @@ class MapController: UIViewController, MKMapViewDelegate, MapManagerDelegate {
         
         var pin = view.annotation as! Pin
         
-        func openMaps(action: UIAlertAction!) {
+        func openMaps(action: TOActionSheet!) {
             
             let endLocation = MKPlacemark(coordinate: view.annotation!.coordinate, addressDictionary: nil)
             let endItem = MKMapItem(placemark: endLocation)
@@ -96,13 +103,27 @@ class MapController: UIViewController, MKMapViewDelegate, MapManagerDelegate {
             endItem.openInMapsWithLaunchOptions(launchOptions)
         }
         
-        let myActionSheet = UIAlertController(title: "Options", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        // Creo l'actionSheet che mostrerà le opzioni per la navigazione
+        let actionSheet = TOActionSheet()
         
-        myActionSheet.addAction(UIAlertAction(title: "Get Directions", style: UIAlertActionStyle.Default, handler: openMaps))
+        // Assegno il Titolo
+        actionSheet.title = "Options"
+        // Indico lo stile
+        actionSheet.style = .Dark
+        // Indoco il colore di background dei bottoni
+        actionSheet.buttonBackgroundColor = UIColor(red: 0/255.0, green: 196/255.0, blue: 0/255.0, alpha: 1.0)
+        // Imposto la font dei testi
+        actionSheet.titleFont = fontReg
+        actionSheet.buttonFont = fontMed
+        actionSheet.cancelButtonFont = fontMed
         
-        myActionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        // Aggiungo i bottoni
+        actionSheet.addButtonWithTitle("Get Directions") { () -> Void in
+            openMaps(actionSheet)
+        }
         
-        self.presentViewController(myActionSheet, animated: true, completion: nil)
+        // Mostro l'ActionSheet
+        actionSheet.showFromView(self.view, inView: self.view)
     }
 
     /*

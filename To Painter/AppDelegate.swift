@@ -31,6 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
         
+        // facciamo partire il MapManager
+        MapManager.sharedInstance.setupLocationManager()
+        
         return true
     }
 

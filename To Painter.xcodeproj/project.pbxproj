@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B604E70C1BEBB2F900CF1A22 /* TOActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B604E70B1BEBB2F900CF1A22 /* TOActionSheet.m */; };
+		B60DD4BD1BEBCB6400D8EAA2 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60DD4BC1BEBCB6400D8EAA2 /* MessageManager.swift */; };
 		B61313E81BD7E7FE00A6D6B1 /* AddCustomerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61313E71BD7E7FE00A6D6B1 /* AddCustomerController.swift */; };
 		B627F4C91BDA6BA400DD26CE /* CustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B627F4C81BDA6BA400DD26CE /* CustomerCell.swift */; };
 		B63A3B9D1BD36DDE00E07225 /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A3B9C1BD36DDE00E07225 /* ResetPasswordController.swift */; };
 		B67710231BE7B7BB00FD4CA4 /* AddQuotationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67710221BE7B7BB00FD4CA4 /* AddQuotationController.swift */; };
 		B67710251BE7C22700FD4CA4 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67710241BE7C22700FD4CA4 /* MapManager.swift */; };
 		B67710271BE7C27300FD4CA4 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67710261BE7C27300FD4CA4 /* MapController.swift */; };
+		B67D21B31BF0A33700D37164 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D21B21BF0A33700D37164 /* CameraManager.swift */; };
 		B689C51D1BE20DCF0089DE0A /* QuotationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689C51C1BE20DCF0089DE0A /* QuotationsModel.swift */; };
 		B6D580541BD0E15600CD61BA /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D580531BD0E15600CD61BA /* RegisterController.swift */; };
 		B6DB804E1BD54393001A6A4D /* CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DB804D1BD54393001A6A4D /* CloudSync.swift */; };
@@ -67,12 +70,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B604E70A1BEBB2F900CF1A22 /* TOActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOActionSheet.h; sourceTree = "<group>"; };
+		B604E70B1BEBB2F900CF1A22 /* TOActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOActionSheet.m; sourceTree = "<group>"; };
+		B60DD4BC1BEBCB6400D8EAA2 /* MessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
 		B61313E71BD7E7FE00A6D6B1 /* AddCustomerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCustomerController.swift; sourceTree = "<group>"; };
 		B627F4C81BDA6BA400DD26CE /* CustomerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerCell.swift; sourceTree = "<group>"; };
 		B63A3B9C1BD36DDE00E07225 /* ResetPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
 		B67710221BE7B7BB00FD4CA4 /* AddQuotationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQuotationController.swift; sourceTree = "<group>"; };
 		B67710241BE7C22700FD4CA4 /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		B67710261BE7C27300FD4CA4 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		B67D21B21BF0A33700D37164 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		B689A78E1BEA604B009DDBA4 /* To Painter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "To Painter-Bridging-Header.h"; sourceTree = "<group>"; };
 		B689C51C1BE20DCF0089DE0A /* QuotationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotationsModel.swift; sourceTree = "<group>"; };
 		B6D580531BD0E15600CD61BA /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		B6DB804D1BD54393001A6A4D /* CloudSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudSync.swift; sourceTree = "<group>"; };
@@ -153,6 +161,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B689A7941BEA60C6009DDBA4 /* TOActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				B604E70A1BEBB2F900CF1A22 /* TOActionSheet.h */,
+				B604E70B1BEBB2F900CF1A22 /* TOActionSheet.m */,
+			);
+			name = TOActionSheet;
+			sourceTree = "<group>";
+		};
 		B6CCAE0A1BD922DD00764B56 /* cloudServices */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,12 +299,16 @@
 		B6F1445C1BD191E9003B0B43 /* Librerie */ = {
 			isa = PBXGroup;
 			children = (
+				B689A7941BEA60C6009DDBA4 /* TOActionSheet */,
+				B67D21B21BF0A33700D37164 /* CameraManager.swift */,
+				B60DD4BC1BEBCB6400D8EAA2 /* MessageManager.swift */,
 				B67710241BE7C22700FD4CA4 /* MapManager.swift */,
 				B6CCAE0A1BD922DD00764B56 /* cloudServices */,
 				B6DB80511BD543C8001A6A4D /* Functions.swift */,
 				B6DB80521BD543C8001A6A4D /* HudView.swift */,
 				B6DB80541BD543C8001A6A4D /* Pin.swift */,
 				B6F1445A1BD191E4003B0B43 /* SCLAlertView.swift */,
+				B689A78E1BEA604B009DDBA4 /* To Painter-Bridging-Header.h */,
 			);
 			name = Librerie;
 			sourceTree = "<group>";
@@ -363,6 +384,7 @@
 		B6F005351BCF73A600D3EA46 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Marco Boldetti";
 				TargetAttributes = {
@@ -438,7 +460,9 @@
 				B6DB80581BD543C8001A6A4D /* Pin.swift in Sources */,
 				B6F005411BCF73A600D3EA46 /* AppDelegate.swift in Sources */,
 				B6DB804E1BD54393001A6A4D /* CloudSync.swift in Sources */,
+				B67D21B31BF0A33700D37164 /* CameraManager.swift in Sources */,
 				B67710251BE7C22700FD4CA4 /* MapManager.swift in Sources */,
+				B604E70C1BEBB2F900CF1A22 /* TOActionSheet.m in Sources */,
 				B689C51D1BE20DCF0089DE0A /* QuotationsModel.swift in Sources */,
 				B6DB80551BD543C8001A6A4D /* Functions.swift in Sources */,
 				B6F0058C1BCF753700D3EA46 /* SidePanelSystem.swift in Sources */,
@@ -448,6 +472,7 @@
 				B6FD37ED1BD5360100F308D7 /* CustomersModel.swift in Sources */,
 				B61313E81BD7E7FE00A6D6B1 /* AddCustomerController.swift in Sources */,
 				B67710231BE7B7BB00FD4CA4 /* AddQuotationController.swift in Sources */,
+				B60DD4BD1BEBCB6400D8EAA2 /* MessageManager.swift in Sources */,
 				B67710271BE7C27300FD4CA4 /* MapController.swift in Sources */,
 				B6DC0BAC1BDA8E6300F2C3C1 /* QuotationsViewController.swift in Sources */,
 				B6F0058B1BCF753700D3EA46 /* SideBaseController.swift in Sources */,
@@ -597,6 +622,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -605,6 +631,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marcoboldetti.To-Painter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "To Painter/To Painter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -612,6 +640,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -620,6 +649,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marcoboldetti.To-Painter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "To Painter/To Painter-Bridging-Header.h";
 			};
 			name = Release;
 		};

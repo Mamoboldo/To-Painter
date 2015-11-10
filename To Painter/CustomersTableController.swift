@@ -16,9 +16,15 @@ class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCus
     let cloudSync = CloudSync()
     var customersArray = [CustomersModel]()
     var refresh : UIRefreshControl!
+    var image : UIImage! // Customer Image Profile photo
     
     var editCustomer = false
     var rowIndexToEdit = -1 // Indice per capire il cliente da modificare
+    
+    // Font per la actionsheet
+    let fontReg = UIFont(name: "AvenirNext-Regular", size: 14)
+    let fontMed = UIFont(name: "AvenirNext-Medium", size: 15)
+    let fontBold = UIFont(name: "AvenirNext-Bold", size: 15)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +117,6 @@ class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCus
         query.limit = 1000 // Limito i clienti a 1000
         query.orderByAscending("name")
         query.fromLocalDatastore()
-        //query.whereKey("username", equalTo: PFUser.currentUser()!.username!)
         
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil {
@@ -146,6 +151,29 @@ class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCus
     func syncNetowkAvailable() {
         print("La rete è nuovamente disponibile, carico il database")
         cloudSync.beginSync()
+    }
+    
+    // MARK: - Actions
+    @IBAction func addNewCustOptions (sender: UIBarButtonItem) {
+        
+        // Creo l'aler che mostrerà le opzioni per l'aggiunta di un cliente
+        let alert = SCLAlertView()
+        alert.addButton("Import from AddressBook") { () -> Void in
+            print("Import from AddressBook")
+        }
+        alert.addButton("Create new") { () -> Void in
+            self.performSegueWithIdentifier("addCustomerSegue", sender: self)
+        }
+        
+        // Lo mostro a video
+        alert.showInfo("Create a Customer",
+            subTitle: "Choose an option to create a new customer",
+            closeButtonTitle: "Cancel",
+            duration: 0.0,
+            colorStyle: 0x09A9EB,
+            colorTextButton: 0xffffff)
+        
+        // Per convertire un colore da Hex a UInt basta aggiungere 0x davanti al codice Hex
     }
 
     // MARK: - Table view data source
