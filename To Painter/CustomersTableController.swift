@@ -129,6 +129,9 @@ class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCus
                     newCustomer.phoneNumber = obj["phoneNumber"] as? String
                     newCustomer.emailAddress = obj["emailAddress"] as? String
                     newCustomer.webSite = obj["webSite"] as? String
+                    
+                    // Vedere come scaricare e inserire l'immagine nella cella
+                    
                     newCustomer.customerObject = obj
                     self.customersArray.append(newCustomer)
                 }
@@ -193,8 +196,14 @@ class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCus
         
         let cell = tableView.dequeueReusableCellWithIdentifier("customerCell", forIndexPath: indexPath) as! CustomerCell
         
+        // Arrotondo la UiimageView
+        cell.customerImage.layer.masksToBounds = false
+        cell.customerImage.layer.cornerRadius = 20
+        cell.customerImage.clipsToBounds = true
+        
         cell.customerNameLabel.text = "\(customersArray[indexPath.row].name) \(customersArray[indexPath.row].surName)"
         cell.addressLabel.text = "\(customersArray[indexPath.row].address)"
+        //cell.customerImage.image = customersArray[indexPath.row].customerImage
 
         return cell
     }
@@ -226,22 +235,6 @@ class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCus
         editAction.backgroundColor = UIColor.grayColor()
         return [deleteAction, editAction]
     }
-
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

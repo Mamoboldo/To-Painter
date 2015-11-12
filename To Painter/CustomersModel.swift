@@ -18,7 +18,7 @@ class CustomersModel: NSObject {
     var phoneNumber : String!
     var emailAddress : String!
     var webSite : String!
-    var customerImage : String!
+    var customerImage : UIImage!
     var customerObject : PFObject!
 
 }

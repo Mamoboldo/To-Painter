@@ -43,8 +43,6 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("CustomerImage: \(customerImage.image!)")
-        
         // CameraManagerDelegate
         CameraManager.sharedInstance.delegate = self
         
@@ -165,6 +163,7 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
         }
     }
     
+    // Passa alla Field precedente
     func goToBackField(textField: UITextField) {
         if webSiteField.isFirstResponder() {
             emailField.becomeFirstResponder()
@@ -179,6 +178,7 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
         }
     }
     
+    // Passa alla Field successiva
     func goToFowardField(textField: UITextField) {
         if nameField.isFirstResponder() {
             surNameField.becomeFirstResponder()
@@ -193,6 +193,7 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
         }
     }
     
+    // Blocca tutte le Field e ImageView
     func lock() -> Bool {
         let indexPath = tableView.indexPathForSelectedRow
         nameField.enabled = false
@@ -210,6 +211,7 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
         return true
     }
     
+    // Sblocca tutte le Field e ImageView
     func unlockAll(sender: AnyObject) -> Bool {
         let indexPath = tableView.indexPathForSelectedRow
         nameField.enabled = true
@@ -289,24 +291,17 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
     @IBAction func donePressed(sender: AnyObject) {
         let hudView = HudView.hudInView(navigationController!.view, animated: true)
         
-        // Trasformo l'immagine in NSData (Classe contenitore di file)
-        //let imageData = UIImagePNGRepresentation(custImage!)
-        
-        // Creo il PFFile (classe di Parse per i file)
-        //let imageFile = PFFile(name: "customerPhoto.png", data: imageData!)
-        
         var newCustomer = PFObject(className: Tables().TABLE_CUSTOMERS)
         if customerIsEdit {
             newCustomer = customerToEdit!
         }
-        newCustomer["username"]     = PFUser.currentUser()!.username
-        newCustomer["name"]         = nameField.text
-        newCustomer["surName"]      = surNameField.text
-        newCustomer["address"]      = addressField.text
-        newCustomer["phoneNumber"]  = phoneField.text
-        newCustomer["emailAddress"] = emailField.text
-        newCustomer["webSite"]      = webSiteField.text
-        //newCustomer["customerImage"] = imageFile
+        newCustomer["username"]      = PFUser.currentUser()!.username
+        newCustomer["name"]          = nameField.text
+        newCustomer["surName"]       = surNameField.text
+        newCustomer["address"]       = addressField.text
+        newCustomer["phoneNumber"]   = phoneField.text
+        newCustomer["emailAddress"]  = emailField.text
+        newCustomer["webSite"]       = webSiteField.text
         newCustomer.pinInBackgroundWithBlock { (success, error) -> Void in
             if error == nil {
                 newCustomer.saveEventually()
@@ -325,8 +320,6 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
                 self.dismissViewControllerAnimated(true, completion: nil)
             })
         }
-        
-        //print("Immagine: \(imageFile), CustomerImage: \(customerImage.image!)")
     }
     
     @IBAction func showAddPictureCell(sender: UISwitch) {
