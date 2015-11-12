@@ -11,6 +11,7 @@
 		B60DD4BD1BEBCB6400D8EAA2 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60DD4BC1BEBCB6400D8EAA2 /* MessageManager.swift */; };
 		B61313E81BD7E7FE00A6D6B1 /* AddCustomerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61313E71BD7E7FE00A6D6B1 /* AddCustomerController.swift */; };
 		B627F4C91BDA6BA400DD26CE /* CustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B627F4C81BDA6BA400DD26CE /* CustomerCell.swift */; };
+		B636B43A1BF4964D00B6CE8F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B636B4391BF4964D00B6CE8F /* Podfile */; };
 		B63A3B9D1BD36DDE00E07225 /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A3B9C1BD36DDE00E07225 /* ResetPasswordController.swift */; };
 		B67710231BE7B7BB00FD4CA4 /* AddQuotationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67710221BE7B7BB00FD4CA4 /* AddQuotationController.swift */; };
 		B67710251BE7C22700FD4CA4 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67710241BE7C22700FD4CA4 /* MapManager.swift */; };
@@ -83,6 +84,7 @@
 		B61313E71BD7E7FE00A6D6B1 /* AddCustomerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCustomerController.swift; sourceTree = "<group>"; };
 		B627F4C81BDA6BA400DD26CE /* CustomerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerCell.swift; sourceTree = "<group>"; };
 		B636B41E1BF4935600B6CE8F /* FloatingActionSheetController.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = FloatingActionSheetController.xcodeproj; sourceTree = "<group>"; };
+		B636B4391BF4964D00B6CE8F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		B63A3B9C1BD36DDE00E07225 /* ResetPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
 		B67710221BE7B7BB00FD4CA4 /* AddQuotationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQuotationController.swift; sourceTree = "<group>"; };
 		B67710241BE7C22700FD4CA4 /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				B6DC0BAD1BDA8E6E00F2C3C1 /* Quotations */,
 				B6FD37EE1BD5360E00F308D7 /* DB Manager */,
 				B6F1445C1BD191E9003B0B43 /* Librerie */,
+				B636B4391BF4964D00B6CE8F /* Podfile */,
 				B6F0058D1BCF753B00D3EA46 /* SidePanel */,
 				B6F005471BCF73A600D3EA46 /* Assets.xcassets */,
 				B6F005491BCF73A600D3EA46 /* LaunchScreen.storyboard */,
@@ -464,6 +467,7 @@
 			files = (
 				B6F0054B1BCF73A600D3EA46 /* LaunchScreen.storyboard in Resources */,
 				B6F005481BCF73A600D3EA46 /* Assets.xcassets in Resources */,
+				B636B43A1BF4964D00B6CE8F /* Podfile in Resources */,
 				B6F005461BCF73A600D3EA46 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
