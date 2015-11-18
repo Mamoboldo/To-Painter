@@ -8,28 +8,22 @@
 
 import UIKit
 import Parse
-import MessageUI
 
 protocol AddCustomerDelegate{
     func customerAdded()
 }
 
-class AddCustomerController: UITableViewController, UITextFieldDelegate,
-                                MFMailComposeViewControllerDelegate, CameraManagerDelegate {
+class AddCustomerController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var cancelButtonItem: UIBarButtonItem!
     @IBOutlet weak var doneButtonItem: UIBarButtonItem!
     
-    @IBOutlet weak var addPictureSwitch: UISwitch!
-    @IBOutlet weak var customerImage: UIImageView!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var surNameField: UITextField!
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var webSiteField: UITextField!
-    
-    var custImage: UIImage!
     
     let fontReg = UIFont(name: "AvenirNext-Regular", size: 17)
     let fontMed = UIFont(name: "AvenirNext-Medium", size: 17)
@@ -43,9 +37,6 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // CameraManagerDelegate
-        CameraManager.sharedInstance.delegate = self
-        
         // UITextFieldDelegate
         nameField.delegate = self
         surNameField.delegate = self
@@ -55,7 +46,7 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
         webSiteField.delegate = self
         
         // Levo quel fastidioso bordo tra la fine del navigation e la prima cella
-        tableView.contentInset = UIEdgeInsetsMake(-40, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsetsMake(-30, 0, 0, 0)
         
         // Setto il font dei BarButtonItem
         cancelButtonItem.setTitleTextAttributes([NSFontAttributeName: fontReg!], forState: .Normal)
@@ -82,13 +73,6 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
             emailField.text = customerToEdit["emailAddress"] as? String
             webSiteField.text = customerToEdit["webSite"] as? String
         }
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // Rendo l'immagine Tonda
-        customerImage.layer.cornerRadius = 80
     }
 
     override func didReceiveMemoryWarning() {
@@ -193,25 +177,19 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
         }
     }
     
-    // Blocca tutte le Field e ImageView
+    // Blocca tutte le Field
     func lock() -> Bool {
-        let indexPath = tableView.indexPathForSelectedRow
         nameField.enabled = false
         surNameField.enabled = false
         addressField.enabled = false
         phoneField.enabled = false
         emailField.enabled = false
         webSiteField.enabled = false
-        customerImage.userInteractionEnabled = false
         
-        // Mostro la mappa
-        if indexPath?.section == 0 && indexPath?.row == 5 {
-            performSegueWithIdentifier("showMap", sender: self)
-        }
         return true
     }
     
-    // Sblocca tutte le Field e ImageView
+    // Sblocca tutte le Field
     func unlockAll(sender: AnyObject) -> Bool {
         let indexPath = tableView.indexPathForSelectedRow
         nameField.enabled = true
@@ -220,7 +198,6 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
         phoneField.enabled = true
         emailField.enabled = true
         webSiteField.enabled = true
-        customerImage.userInteractionEnabled = true
         
         doneButtonItem.title = "Done"
         doneButtonItem.action = "donePressed:"
@@ -231,61 +208,9 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
         return false
     }
     
-    func sendEmail () {
-        let mailComposeViewController = configuredMailComposeViewController()
-        if MFMailComposeViewController.canSendMail() {
-            self.presentViewController(mailComposeViewController, animated: true, completion: nil)
-        } else {
-            self.showSendEmailErrorAlert()
-        }
-    }
-    
-    func configuredMailComposeViewController() -> MFMailComposeViewController {
-        let mailComposeVC = MFMailComposeViewController()
-        mailComposeVC.mailComposeDelegate = self // Set the delegate
-        
-        mailComposeVC.setToRecipients([emailField.text!])
-        mailComposeVC.setSubject("Mail from To Painters")
-        mailComposeVC.setMessageBody("", isHTML: false)
-        
-        return mailComposeVC
-    }
-    
-    func showSendEmailErrorAlert() {
-        let sendMailErrorAlert = SCLAlertView()
-        
-        sendMailErrorAlert.showError("Could not Send Email", subTitle: "Your device could not send e-mail.  Please check e-mail configuration and try again.", closeButtonTitle: "OK")
-    }
-    
-    // MARK: MFMailComposeViewControllerDelegate Method
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     // MARK: - Actions
     @IBAction func cancelPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    // Azione collegata alla gesture del tap fatto sull'immagine
-    @IBAction func selectImage(sender: UITapGestureRecognizer) {
-        CameraManager.sharedInstance.newImageFromLibraryForController(self, editing: true)
-    }
-    
-    // CameraManagerDelegate Method
-    func incomingImage(image: UIImage) {
-        
-        // mettiamo a video l'UIImage contenuta nella var image
-        custImage = image
-        
-        // Arrotondo la UiimageView
-        customerImage.layer.masksToBounds = false
-        customerImage.layer.cornerRadius = 80
-        customerImage.clipsToBounds = true
-        
-        // Passo l'immagine
-        customerImage.image = custImage
-        print("\(image)")
     }
     
     @IBAction func donePressed(sender: AnyObject) {
@@ -295,6 +220,7 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
         if customerIsEdit {
             newCustomer = customerToEdit!
         }
+        
         newCustomer["username"]      = PFUser.currentUser()!.username
         newCustomer["name"]          = nameField.text
         newCustomer["surName"]       = surNameField.text
@@ -302,6 +228,7 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
         newCustomer["phoneNumber"]   = phoneField.text
         newCustomer["emailAddress"]  = emailField.text
         newCustomer["webSite"]       = webSiteField.text
+        
         newCustomer.pinInBackgroundWithBlock { (success, error) -> Void in
             if error == nil {
                 newCustomer.saveEventually()
@@ -322,85 +249,83 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate,
         }
     }
     
-    @IBAction func showAddPictureCell(sender: UISwitch) {
-        if addPictureSwitch.on {
-            showPhotoCell()
-        } else {
-            hidePhotoCell()
-        }
-    }
-    
-    func showPhotoCell() {
-        if altezza == 0 {
-            altezza = 180
-        }
-        tableView.beginUpdates()
-        tableView.endUpdates()
-    }
-    
-    func hidePhotoCell() {
-        if altezza == 180 {
-            altezza = 0
-        }
-        tableView.beginUpdates()
-        tableView.endUpdates()
-    }
-    
     // MARK: - UITableViewDelegate
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if lock() {
             addressField.enabled = false
+            // Mostro la mappa
+            if indexPath.section == 0 && indexPath.row == 5 {
+                if addressField.text?.isEmpty == true {
+                    let alert = SCLAlertView()
+                    alert.showError("Attention!",
+                        subTitle: "The address is empty.\nPlease edit the customer and insert a valid address.",
+                        closeButtonTitle: "OK")
+                } else {
+                    performSegueWithIdentifier("showMap", sender: self)
+                }
+            }
             // Chiamo il numero di telefono
             if indexPath.section == 1 && indexPath.row == 0 {
                 print("phoneNumber")
-                
-                // Creo l'actionSheet che mostrerà le opzioni per la navigazione
-                let actionSheet = TOActionSheet()
-                
-                // Assegno il Titolo
-                actionSheet.title = "Options"
-                // Indico lo stile
-                actionSheet.style = .Dark
-                // Indoco il colore di background dei bottoni
-                // actionSheet.buttonBackgroundColor = UIColor(red: 0/255.0, green: 196/255.0, blue: 0/255.0, alpha: 1.0)
-                // Imposto la font dei testi
-                actionSheet.titleFont = fontReg
-                actionSheet.buttonFont = fontMed
-                actionSheet.cancelButtonFont = fontMed
-                
-                // Aggiungo i bottoni
-                actionSheet.addButtonWithTitle("Call") { () -> Void in
-                    print("Calling")
+                if phoneField.text?.isEmpty == true {
+                    let alert = SCLAlertView()
+                    alert.showError("Attention!",
+                        subTitle: "Phone number do not exist.\nPlease edit the customer and insert a valid number.",
+                        closeButtonTitle: "OK")
+                } else {
+                    // Creo l'actionSheet che mostrerà le opzioni per la navigazione
+                    let actionSheet = TOActionSheet()
+                    
+                    // Assegno il Titolo
+                    actionSheet.title = "Options"
+                    // Indico lo stile
+                    actionSheet.style = .Dark
+                    // Indoco il colore di background dei bottoni
+                    // actionSheet.buttonBackgroundColor = UIColor(red: 0/255.0, green: 196/255.0, blue: 0/255.0, alpha: 1.0)
+                    // Imposto la font dei testi
+                    actionSheet.titleFont = fontReg
+                    actionSheet.buttonFont = fontMed
+                    actionSheet.cancelButtonFont = fontMed
+                    
+                    // Aggiungo i bottoni
+                    actionSheet.addButtonWithTitle("Call") { () -> Void in
+                        // Start calling
+                        UIApplication.sharedApplication().openURL(NSURL(string: "telprompt://" + self.phoneField.text!)!)
+                    }
+                    
+                    actionSheet.addButtonWithTitle("Send a Message") { () -> Void in
+                        print("Sending a Message!")
+                        MessageManager.sharedInstance.sendMessageTo(phone: self.phoneField.text!, messg: "", controller: self)
+                    }
+                    
+                    // Mostro l'ActionSheet
+                    actionSheet.showFromView(self.view, inView: self.view)
+                    
                 }
-                
-                actionSheet.addButtonWithTitle("Send a Message") { () -> Void in
-                    print("Sending a Message!")
-                }
-                
-                // Mostro l'ActionSheet
-                actionSheet.showFromView(self.view, inView: self.view)
             }
             
             if indexPath.section == 1 && indexPath.row == 1 {
                 print("emailAddress")
-                sendEmail()
+                let name = customerToEdit["name"] as! String
+                let surName = customerToEdit["surName"] as! String
+                if emailField.text?.isEmpty == true {
+                    let alert = SCLAlertView()
+                    alert.showError("Attention!",
+                        subTitle: "e-mail address is empty.\nPlease edit the customer and insert a valid e-mail address.",
+                        closeButtonTitle: "OK")
+                } else {
+                    MessageManager.sharedInstance.sendMailTo(dest: self.emailField.text!,
+                        subject: "Mail from \(name) \(surName)",
+                        body: "",
+                        attachment: nil,
+                        mime: "",
+                        fname: "",
+                        controller: self)
+                }
             }
         } else {
             unlockAll(self)
-        }
-    }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        // Uso un metodo switch per riconoscere la cella che mostrerà la foto
-        // e ne definisco le varie altezze
-        
-        if indexPath.section == 0 && indexPath.row == 0 {
-            return 60
-        } else if indexPath.section == 0 && indexPath.row == 1 {
-            return altezza
-        } else {
-            return 60
         }
     }
     

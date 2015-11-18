@@ -56,6 +56,7 @@ class MessageManager: NSObject, MFMailComposeViewControllerDelegate, MFMessageCo
     
     func sendMessageTo(phone phone : String, messg : String, controller: UIViewController) {
         let messageComposer = MFMessageComposeViewController()
+        messageComposer.messageComposeDelegate = self
         messageComposer.recipients = [phone]
         messageComposer.body = messg
         controller.presentViewController(messageComposer,

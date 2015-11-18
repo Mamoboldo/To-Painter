@@ -16,7 +16,6 @@ class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCus
     let cloudSync = CloudSync()
     var customersArray = [CustomersModel]()
     var refresh : UIRefreshControl!
-    var image : UIImage! // Customer Image Profile photo
     
     var editCustomer = false
     var rowIndexToEdit = -1 // Indice per capire il cliente da modificare
@@ -130,8 +129,6 @@ class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCus
                     newCustomer.emailAddress = obj["emailAddress"] as? String
                     newCustomer.webSite = obj["webSite"] as? String
                     
-                    // Vedere come scaricare e inserire l'immagine nella cella
-                    
                     newCustomer.customerObject = obj
                     self.customersArray.append(newCustomer)
                 }
@@ -194,17 +191,11 @@ class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCus
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("customerCell", forIndexPath: indexPath) as! CustomerCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("customerCell", forIndexPath: indexPath)
         
-        // Arrotondo la UiimageView
-        cell.customerImage.layer.masksToBounds = false
-        cell.customerImage.layer.cornerRadius = 20
-        cell.customerImage.clipsToBounds = true
+        cell.textLabel!.text = "\(customersArray[indexPath.row].name) \(customersArray[indexPath.row].surName)"
+        cell.detailTextLabel!.text = "\(customersArray[indexPath.row].address)"
         
-        cell.customerNameLabel.text = "\(customersArray[indexPath.row].name) \(customersArray[indexPath.row].surName)"
-        cell.addressLabel.text = "\(customersArray[indexPath.row].address)"
-        //cell.customerImage.image = customersArray[indexPath.row].customerImage
-
         return cell
     }
     

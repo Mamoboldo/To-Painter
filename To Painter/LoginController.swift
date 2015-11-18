@@ -80,7 +80,12 @@ class LoginController: UITableViewController, UITextFieldDelegate {
                     })
                     customerController.updateTable()
                     customerController.refreshBegin()
-                    alert.showSuccess("'To Painters'", subTitle: "Hello \(PFUser.currentUser()!.username!), you are logged in!")
+                    alert.showInfo ("'To Painters'",
+                        subTitle: "Hello \(PFUser.currentUser()!.username!), you are logged in!",
+                        closeButtonTitle: nil,
+                        duration: 0.0,
+                        colorStyle: 0x09A9EB,
+                        colorTextButton: 0xffffff)
                 } else {
                     // Errore di login
                     SCLAlertView().showError("Error", subTitle: "\(error)", closeButtonTitle:"OK")

@@ -9,7 +9,6 @@
 import UIKit
 import MapKit
 import AddressBookUI
-import FloatingActionSheetController
 
 class MapController: UIViewController, MKMapViewDelegate, MapManagerDelegate {
     @IBOutlet var customerAddressMap : MKMapView!
@@ -67,7 +66,7 @@ class MapController: UIViewController, MKMapViewDelegate, MapManagerDelegate {
     
     func incomingError(error: NSError) {
         let alert = SCLAlertView()
-        alert.showError("Warning!", subTitle: "\(error.userInfo)", closeButtonTitle: "OK")
+        alert.showError("Warning!", subTitle: "\(error.description)", closeButtonTitle: "OK")
     }
     
     // MARK: - MKMapViewDelegate Methods

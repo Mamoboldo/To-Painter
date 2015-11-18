@@ -10,7 +10,6 @@
 		B604E70C1BEBB2F900CF1A22 /* TOActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B604E70B1BEBB2F900CF1A22 /* TOActionSheet.m */; };
 		B60DD4BD1BEBCB6400D8EAA2 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60DD4BC1BEBCB6400D8EAA2 /* MessageManager.swift */; };
 		B61313E81BD7E7FE00A6D6B1 /* AddCustomerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61313E71BD7E7FE00A6D6B1 /* AddCustomerController.swift */; };
-		B627F4C91BDA6BA400DD26CE /* CustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B627F4C81BDA6BA400DD26CE /* CustomerCell.swift */; };
 		B636B43A1BF4964D00B6CE8F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B636B4391BF4964D00B6CE8F /* Podfile */; };
 		B63A3B9D1BD36DDE00E07225 /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A3B9C1BD36DDE00E07225 /* ResetPasswordController.swift */; };
 		B67710231BE7B7BB00FD4CA4 /* AddQuotationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67710221BE7B7BB00FD4CA4 /* AddQuotationController.swift */; };
@@ -54,13 +53,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B636B4231BF4935600B6CE8F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B636B41E1BF4935600B6CE8F /* FloatingActionSheetController.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2A4B95531BDC31FA00148B08;
-			remoteInfo = FloatingActionSheetController;
-		};
 		B6F005521BCF73A600D3EA46 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B6F005351BCF73A600D3EA46 /* Project object */;
@@ -82,8 +74,6 @@
 		B604E70B1BEBB2F900CF1A22 /* TOActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOActionSheet.m; sourceTree = "<group>"; };
 		B60DD4BC1BEBCB6400D8EAA2 /* MessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
 		B61313E71BD7E7FE00A6D6B1 /* AddCustomerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCustomerController.swift; sourceTree = "<group>"; };
-		B627F4C81BDA6BA400DD26CE /* CustomerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerCell.swift; sourceTree = "<group>"; };
-		B636B41E1BF4935600B6CE8F /* FloatingActionSheetController.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = FloatingActionSheetController.xcodeproj; sourceTree = "<group>"; };
 		B636B4391BF4964D00B6CE8F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		B63A3B9C1BD36DDE00E07225 /* ResetPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
 		B67710221BE7B7BB00FD4CA4 /* AddQuotationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQuotationController.swift; sourceTree = "<group>"; };
@@ -171,14 +161,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B636B41F1BF4935600B6CE8F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B636B4241BF4935600B6CE8F /* FloatingActionSheetController.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		B689A7941BEA60C6009DDBA4 /* TOActionSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,7 +291,6 @@
 			children = (
 				B6F005921BCF7E1300D3EA46 /* CustomersTableController.swift */,
 				B61313E71BD7E7FE00A6D6B1 /* AddCustomerController.swift */,
-				B627F4C81BDA6BA400DD26CE /* CustomerCell.swift */,
 				B67710261BE7C27300FD4CA4 /* MapController.swift */,
 			);
 			name = Customer;
@@ -318,7 +299,6 @@
 		B6F1445C1BD191E9003B0B43 /* Librerie */ = {
 			isa = PBXGroup;
 			children = (
-				B636B41E1BF4935600B6CE8F /* FloatingActionSheetController.xcodeproj */,
 				B689A7941BEA60C6009DDBA4 /* TOActionSheet */,
 				B67D21B21BF0A33700D37164 /* CameraManager.swift */,
 				B60DD4BC1BEBCB6400D8EAA2 /* MessageManager.swift */,
@@ -435,12 +415,6 @@
 			mainGroup = B6F005341BCF73A600D3EA46;
 			productRefGroup = B6F0053E1BCF73A600D3EA46 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = B636B41F1BF4935600B6CE8F /* Products */;
-					ProjectRef = B636B41E1BF4935600B6CE8F /* FloatingActionSheetController.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				B6F0053C1BCF73A600D3EA46 /* To Painter */,
@@ -449,16 +423,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		B636B4241BF4935600B6CE8F /* FloatingActionSheetController.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FloatingActionSheetController.framework;
-			remoteRef = B636B4231BF4935600B6CE8F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B6F0053B1BCF73A600D3EA46 /* Resources */ = {
@@ -513,7 +477,6 @@
 				B67710271BE7C27300FD4CA4 /* MapController.swift in Sources */,
 				B6DC0BAC1BDA8E6300F2C3C1 /* QuotationsViewController.swift in Sources */,
 				B6F0058B1BCF753700D3EA46 /* SideBaseController.swift in Sources */,
-				B627F4C91BDA6BA400DD26CE /* CustomerCell.swift in Sources */,
 				B6DB80561BD543C8001A6A4D /* HudView.swift in Sources */,
 				B63A3B9D1BD36DDE00E07225 /* ResetPasswordController.swift in Sources */,
 				B6D580541BD0E15600CD61BA /* RegisterController.swift in Sources */,
