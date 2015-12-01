@@ -19,9 +19,11 @@ class MapController: UIViewController, MKMapViewDelegate, MapManagerDelegate {
     let fontBold = UIFont(name: "AvenirNext-Bold", size: 15)
     
     var address : String! // Indirizzo che verrà passato dalla textField
+    var customerString: String! // Stringa che darà il titolo alla mappa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = customerString
         
         customerAddressMap.delegate = self
         customerAddressMap.userTrackingMode = MKUserTrackingMode.Follow

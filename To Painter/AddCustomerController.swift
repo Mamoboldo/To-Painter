@@ -324,6 +324,11 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate {
                         controller: self)
                 }
             }
+            
+            if indexPath.section == 1 && indexPath.row == 2 {
+                // Open Safari
+                UIApplication.sharedApplication().openURL(NSURL(string: "http://" + self.webSiteField.text!)!)
+            }
         } else {
             unlockAll(self)
         }
@@ -335,6 +340,7 @@ class AddCustomerController: UITableViewController, UITextFieldDelegate {
             let mapController = segue.destinationViewController as! MapController
             // Passo l'indirizzo alla stringa
             mapController.address = addressField.text
+            mapController.customerString = "Go to address"
             MapManager.sharedInstance.customerName = self.title // Passo il nome del cliente alla stringa che verrà visualizzata nel pop up
         }
     }
