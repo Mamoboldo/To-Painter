@@ -12,18 +12,18 @@
 		B61313E81BD7E7FE00A6D6B1 /* AddCustomerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61313E71BD7E7FE00A6D6B1 /* AddCustomerController.swift */; };
 		B636B43A1BF4964D00B6CE8F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B636B4391BF4964D00B6CE8F /* Podfile */; };
 		B63A3B9D1BD36DDE00E07225 /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A3B9C1BD36DDE00E07225 /* ResetPasswordController.swift */; };
-		B67710231BE7B7BB00FD4CA4 /* AddQuotationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67710221BE7B7BB00FD4CA4 /* AddQuotationController.swift */; };
+		B67710231BE7B7BB00FD4CA4 /* AddEstimateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67710221BE7B7BB00FD4CA4 /* AddEstimateController.swift */; };
 		B67710251BE7C22700FD4CA4 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67710241BE7C22700FD4CA4 /* MapManager.swift */; };
 		B67710271BE7C27300FD4CA4 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67710261BE7C27300FD4CA4 /* MapController.swift */; };
 		B67D21B31BF0A33700D37164 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D21B21BF0A33700D37164 /* CameraManager.swift */; };
-		B689C51D1BE20DCF0089DE0A /* QuotationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689C51C1BE20DCF0089DE0A /* QuotationsModel.swift */; };
+		B689C51D1BE20DCF0089DE0A /* EstimatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689C51C1BE20DCF0089DE0A /* EstimatesModel.swift */; };
 		B6D580541BD0E15600CD61BA /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D580531BD0E15600CD61BA /* RegisterController.swift */; };
 		B6DB804E1BD54393001A6A4D /* CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DB804D1BD54393001A6A4D /* CloudSync.swift */; };
 		B6DB80501BD543A7001A6A4D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DB804F1BD543A7001A6A4D /* Reachability.swift */; };
 		B6DB80551BD543C8001A6A4D /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DB80511BD543C8001A6A4D /* Functions.swift */; };
 		B6DB80561BD543C8001A6A4D /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DB80521BD543C8001A6A4D /* HudView.swift */; };
 		B6DB80581BD543C8001A6A4D /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DB80541BD543C8001A6A4D /* Pin.swift */; };
-		B6DC0BAC1BDA8E6300F2C3C1 /* QuotationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC0BAB1BDA8E6300F2C3C1 /* QuotationsViewController.swift */; };
+		B6DC0BAC1BDA8E6300F2C3C1 /* EstimatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC0BAB1BDA8E6300F2C3C1 /* EstimatesViewController.swift */; };
 		B6E73A981BD0C884000EC7FE /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E73A971BD0C884000EC7FE /* LoginController.swift */; };
 		B6F005411BCF73A600D3EA46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F005401BCF73A600D3EA46 /* AppDelegate.swift */; };
 		B6F005461BCF73A600D3EA46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6F005441BCF73A600D3EA46 /* Main.storyboard */; };
@@ -76,19 +76,19 @@
 		B61313E71BD7E7FE00A6D6B1 /* AddCustomerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCustomerController.swift; sourceTree = "<group>"; };
 		B636B4391BF4964D00B6CE8F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		B63A3B9C1BD36DDE00E07225 /* ResetPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
-		B67710221BE7B7BB00FD4CA4 /* AddQuotationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQuotationController.swift; sourceTree = "<group>"; };
+		B67710221BE7B7BB00FD4CA4 /* AddEstimateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEstimateController.swift; sourceTree = "<group>"; };
 		B67710241BE7C22700FD4CA4 /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		B67710261BE7C27300FD4CA4 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		B67D21B21BF0A33700D37164 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		B689A78E1BEA604B009DDBA4 /* To Painter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "To Painter-Bridging-Header.h"; sourceTree = "<group>"; };
-		B689C51C1BE20DCF0089DE0A /* QuotationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotationsModel.swift; sourceTree = "<group>"; };
+		B689C51C1BE20DCF0089DE0A /* EstimatesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatesModel.swift; sourceTree = "<group>"; };
 		B6D580531BD0E15600CD61BA /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		B6DB804D1BD54393001A6A4D /* CloudSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudSync.swift; sourceTree = "<group>"; };
 		B6DB804F1BD543A7001A6A4D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		B6DB80511BD543C8001A6A4D /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		B6DB80521BD543C8001A6A4D /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		B6DB80541BD543C8001A6A4D /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
-		B6DC0BAB1BDA8E6300F2C3C1 /* QuotationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotationsViewController.swift; sourceTree = "<group>"; };
+		B6DC0BAB1BDA8E6300F2C3C1 /* EstimatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatesViewController.swift; sourceTree = "<group>"; };
 		B6E73A971BD0C884000EC7FE /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		B6F0053D1BCF73A600D3EA46 /* To Painter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To Painter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F005401BCF73A600D3EA46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,8 +182,8 @@
 		B6DC0BAD1BDA8E6E00F2C3C1 /* Quotations */ = {
 			isa = PBXGroup;
 			children = (
-				B6DC0BAB1BDA8E6300F2C3C1 /* QuotationsViewController.swift */,
-				B67710221BE7B7BB00FD4CA4 /* AddQuotationController.swift */,
+				B6DC0BAB1BDA8E6300F2C3C1 /* EstimatesViewController.swift */,
+				B67710221BE7B7BB00FD4CA4 /* AddEstimateController.swift */,
 			);
 			name = Quotations;
 			sourceTree = "<group>";
@@ -317,7 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				B6FD37EC1BD5360100F308D7 /* CustomersModel.swift */,
-				B689C51C1BE20DCF0089DE0A /* QuotationsModel.swift */,
+				B689C51C1BE20DCF0089DE0A /* EstimatesModel.swift */,
 			);
 			name = "DB Manager";
 			sourceTree = "<group>";
@@ -464,7 +464,7 @@
 				B67D21B31BF0A33700D37164 /* CameraManager.swift in Sources */,
 				B67710251BE7C22700FD4CA4 /* MapManager.swift in Sources */,
 				B604E70C1BEBB2F900CF1A22 /* TOActionSheet.m in Sources */,
-				B689C51D1BE20DCF0089DE0A /* QuotationsModel.swift in Sources */,
+				B689C51D1BE20DCF0089DE0A /* EstimatesModel.swift in Sources */,
 				B6DB80551BD543C8001A6A4D /* Functions.swift in Sources */,
 				B6F0058C1BCF753700D3EA46 /* SidePanelSystem.swift in Sources */,
 				B6F005911BCF769400D3EA46 /* SideTableController.swift in Sources */,
@@ -472,10 +472,10 @@
 				B6E73A981BD0C884000EC7FE /* LoginController.swift in Sources */,
 				B6FD37ED1BD5360100F308D7 /* CustomersModel.swift in Sources */,
 				B61313E81BD7E7FE00A6D6B1 /* AddCustomerController.swift in Sources */,
-				B67710231BE7B7BB00FD4CA4 /* AddQuotationController.swift in Sources */,
+				B67710231BE7B7BB00FD4CA4 /* AddEstimateController.swift in Sources */,
 				B60DD4BD1BEBCB6400D8EAA2 /* MessageManager.swift in Sources */,
 				B67710271BE7C27300FD4CA4 /* MapController.swift in Sources */,
-				B6DC0BAC1BDA8E6300F2C3C1 /* QuotationsViewController.swift in Sources */,
+				B6DC0BAC1BDA8E6300F2C3C1 /* EstimatesViewController.swift in Sources */,
 				B6F0058B1BCF753700D3EA46 /* SideBaseController.swift in Sources */,
 				B6DB80561BD543C8001A6A4D /* HudView.swift in Sources */,
 				B63A3B9D1BD36DDE00E07225 /* ResetPasswordController.swift in Sources */,

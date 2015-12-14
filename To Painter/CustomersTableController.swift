@@ -10,8 +10,9 @@ import UIKit
 import Bolts
 import Parse
 import ParseUI
+import ContactsUI
 
-class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCustomerDelegate {
+class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCustomerDelegate, CNContactPickerDelegate {
     
     let cloudSync = CloudSync()
     var customersArray = [CustomersModel]()
@@ -27,8 +28,6 @@ class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCus
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let fontReg = UIFont(name: "AvenirNext-Regular", size: 17)
         
         //Personalizzo la font dei pulsanti del navigationItem
         UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: fontReg!], forState: .Normal)
@@ -85,7 +84,12 @@ class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCus
             PFUser.logOut()
             self.showLoginView()
         })
-        alert.showWarning("Attention!", subTitle: "Are you sure you want to log out?", closeButtonTitle: "Cancel")
+        alert.showWarning("Attention!",
+                subTitle: "Are you sure you want to log out?",
+                closeButtonTitle: "Cancel",
+                duration: 0.0,
+                colorStyle: 0x09A9EB,
+                colorTextButton: 0xffffff)
     }
 
     override func didReceiveMemoryWarning() {
@@ -104,7 +108,7 @@ class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCus
         if success {
             print("Nel locale ci sono nuovi dati")
             updateTable()
-            // Qui si può dare l'ordine di ricaricarsi anche a QuotationsController
+            // Qui si può dare l'ordine di ricaricarsi anche a EstimatesController
         } else {
             print("Non  c'è rete, nel locale ci sono i vecchi dati")
         }
@@ -155,11 +159,16 @@ class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCus
     
     // MARK: - Actions
     @IBAction func addNewCustOptions (sender: UIBarButtonItem) {
+        let contactPickerViewController = CNContactPickerViewController()
+        contactPickerViewController.delegate = self
         
         // Creo l'aler che mostrerà le opzioni per l'aggiunta di un cliente
         let alert = SCLAlertView()
         alert.addButton("Import from AddressBook") { () -> Void in
             print("Import from AddressBook")
+            
+            contactPickerViewController.predicateForEnablingContact = NSPredicate(format: "name != nil")
+            self.presentViewController(contactPickerViewController, animated: true, completion: nil)
         }
         alert.addButton("Create new") { () -> Void in
             self.performSegueWithIdentifier("addCustomerSegue", sender: self)
@@ -200,7 +209,7 @@ class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCus
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("showCustQuotation", sender: self)
+        self.performSegueWithIdentifier("showCustEstimate", sender: self)
     }
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
@@ -245,10 +254,16 @@ class CustomersTableController: UITableViewController, CloudSyncDelegate, AddCus
             
         }
         
-        if segue.identifier == "showCustQuotation" {
-            let quotationVC = segue.destinationViewController as! QuotationsViewController
+        if segue.identifier == "showCustEstimate" {
+            let estimateVC = segue.destinationViewController as! EstimatesViewController
             let indexPath = tableView.indexPathForSelectedRow!
-            quotationVC.title = "\(customersArray[indexPath.row].name) \(customersArray[indexPath.row].surName)"
+            estimateVC.title = "\(customersArray[indexPath.row].name) \(customersArray[indexPath.row].surName)"
         }
+    }
+    
+    // MARK: CNContactPickerDelegate function
+    func contactPicker(picker: CNContactPickerViewController, didSelectContact contact: CNContact) {
+        //delegate.didFetchContacts([customersArray])
+        navigationController?.popViewControllerAnimated(true)
     }
 }

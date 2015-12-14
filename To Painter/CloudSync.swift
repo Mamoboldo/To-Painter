@@ -13,11 +13,11 @@ protocol CloudSyncDelegate{
     func syncCompleted(success : Bool)
     func syncNetowkAvailable()
 }
-var tablesArray = ["Customer","Quotation"]
+var tablesArray = ["Customer","Estimates"]
 
 struct Tables {  //struttura per poter richiamare facilmente i nomi delle tabelle dalle altri classi
     let TABLE_CUSTOMERS =    tablesArray[0]
-    let TABLE_QUOTATIONS =   tablesArray[1]
+    let TABLE_ESTIMATES =   tablesArray[1]
     let count = 2
 }
 class CloudSync: NSObject {

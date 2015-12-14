@@ -36,7 +36,7 @@ class SideTableController: UITableViewController {
                 self.sidePanelSystem().addCenterPanelViewController(centerPanel)
                 
             case 1:
-                let centerPanel = self.storyboard!.instantiateViewControllerWithIdentifier("quotation") as! UINavigationController
+                let centerPanel = self.storyboard!.instantiateViewControllerWithIdentifier("estimate") as! UINavigationController
                 self.sidePanelSystem().addCenterPanelViewController(centerPanel)
                 
             case 2:
